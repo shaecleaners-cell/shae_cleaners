@@ -197,10 +197,11 @@ a {
             transparent 25%
         ),
         linear-gradient(
-            135deg,
-            #075bd7,
-            #168cff
-        );
+      135deg,
+      #16a34a 0%,
+      #20b957 55%,
+      #54d47d 100%
+    );
 
     color: white;
 
