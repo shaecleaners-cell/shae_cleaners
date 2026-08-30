@@ -181,27 +181,27 @@ function openMenu() {
                     <span>Beranda</span>
                 </a>
 
-                <a href="order.html">
+                <a href="pages/order.html">
                     <i class="fa-solid fa-receipt"></i>
                     <span>Pesanan</span>
                 </a>
 
-                <a href="tracking.html">
+                <a href="pages/tracking.html">
                     <i class="fa-solid fa-location-dot"></i>
                     <span>Tracking Pesanan</span>
                 </a>
 
-                <a href="promo.html">
+                <a href="pages/promo.html">
                     <i class="fa-solid fa-gift"></i>
                     <span>Promo</span>
                 </a>
 
-                <a href="akun.html">
+                <a href="pages/akun.html">
                     <i class="fa-solid fa-user"></i>
                     <span>Akun Saya</span>
                 </a>
 
-                <a href="chat.html">
+                <a href="pages/chat.html">
                     <i class="fa-solid fa-comments"></i>
                     <span>Chat</span>
                 </a>
@@ -216,6 +216,59 @@ function openMenu() {
     overlay.classList.add("show");
 }
 
+/* =========================================================
+   SEARCH
+========================================================= */
+
+const searchInput =
+  document.getElementById(
+    "searchInput"
+  );
+
+
+if (searchInput) {
+
+  searchInput.addEventListener(
+    "input",
+    function () {
+
+      const keyword =
+        this.value
+          .toLowerCase()
+          .trim();
+
+
+      if (!keyword) return;
+
+
+      const result =
+        Object.values(services)
+          .find(service =>
+
+            service.name
+              .toLowerCase()
+              .includes(keyword)
+
+            ||
+
+            service.category
+              .toLowerCase()
+              .includes(keyword)
+
+          );
+
+
+      if (result) {
+
+        window.location.href =
+          `detail.html?service=${result.id}`;
+
+      }
+
+    }
+  );
+
+}
 
 /* =====================================================
    CLOSE MENU
@@ -239,7 +292,7 @@ function closeMenu() {
 
 function booking() {
 
-    window.location.href = "order.html";
+    window.location.href = "pages/order.html";
 
 }
 
