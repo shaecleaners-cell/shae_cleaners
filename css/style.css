@@ -178,17 +178,18 @@ a {
     transition: 0.35s ease;
 }
 
-
 /* =====================================================
-   HERO
+   HERO - COMPACT
 ===================================================== */
 
 .hero {
-    margin: 14px;
-    min-height: 210px;
-    border-radius: 25px;
+    margin: 12px 14px;
+    min-height: 155px;
+    height: 155px;
+    border-radius: 20px;
     overflow: hidden;
     position: relative;
+
     background:
         radial-gradient(
             circle at 90% 15%,
@@ -200,119 +201,150 @@ a {
             #075bd7,
             #168cff
         );
+
     color: white;
+
     display: flex;
     align-items: center;
-    padding: 24px 20px;
-    box-shadow: 0 12px 28px rgba(9, 94, 215, 0.22);
+
+    padding: 16px 17px;
+
+    box-shadow:
+        0 9px 22px rgba(9, 94, 215, 0.18);
 }
 
+
+/* Isi Hero */
+
 .hero-content {
-    width: 50%;
+    width: 68%;
     position: relative;
     z-index: 2;
 }
 
+
+/* Badge */
+
 .hero-badge {
     display: inline-block;
+
     background: rgba(255,255,255,0.17);
     border: 1px solid rgba(255,255,255,0.22);
-    padding: 5px 9px;
+
+    padding: 4px 7px;
     border-radius: 20px;
-    font-size: 8px;
-    margin-bottom: 9px;
+
+    font-size: 7px;
+
+    margin-bottom: 6px;
 }
 
+
+/* Judul */
+
 .hero h2 {
-    font-size: 23px;
-    line-height: 1.25;
+    font-size: 18px;
+    line-height: 1.22;
     font-weight: 700;
-    margin-bottom: 8px;
+
+    margin-bottom: 5px;
 }
 
 .hero h2 span {
     color: #dff1ff;
 }
 
+
+/* Deskripsi */
+
 .hero p {
-    font-size: 9px;
-    line-height: 1.7;
+    font-size: 8px;
+    line-height: 1.45;
+
     color: rgba(255,255,255,0.85);
-    max-width: 230px;
+
+    max-width: 180px;
 }
 
+
+/* Tombol */
+
 .btn-primary {
-    margin-top: 14px;
-    padding: 10px 15px;
-    border-radius: 11px;
+    margin-top: 8px;
+
+    padding: 8px 11px;
+
+    border-radius: 9px;
+
     background: white;
     color: var(--primary-dark);
-    font-size: 10px;
+
+    font-size: 8px;
     font-weight: 700;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,0.10);
+
     transition: 0.2s;
 }
 
 .btn-primary i {
-    margin-right: 5px;
+    margin-right: 4px;
 }
 
-.btn-primary:active {
-    transform: scale(0.95);
-}
+
+/* Gambar/Icon Hero */
 
 .hero-image {
     position: absolute;
-    width: 150px;
-    height: 150px;
-    right: -13px;
-    bottom: -18px;
+
+    width: 110px;
+    height: 110px;
+
+    right: -8px;
+    bottom: -12px;
 }
 
 .clean-icon {
-    width: 115px;
-    height: 115px;
+    width: 90px;
+    height: 90px;
+
     border-radius: 50%;
+
     background: rgba(255,255,255,0.13);
+
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 65px;
+
+    font-size: 48px;
+
     position: absolute;
-    right: 5px;
-    bottom: 8px;
-    box-shadow: inset 0 0 30px rgba(255,255,255,0.08);
+
+    right: 4px;
+    bottom: 5px;
+
+    box-shadow:
+        inset 0 0 25px rgba(255,255,255,0.08);
 }
 
-.bubble {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.28);
-    border: 1px solid rgba(255,255,255,0.5);
-}
+
+/* Bubble */
 
 .bubble-1 {
-    width: 20px;
-    height: 20px;
-    top: 5px;
-    left: 15px;
+    width: 15px;
+    height: 15px;
 }
 
 .bubble-2 {
-    width: 11px;
-    height: 11px;
-    top: 45px;
-    right: 0;
+    width: 8px;
+    height: 8px;
 }
 
 .bubble-3 {
-    width: 15px;
-    height: 15px;
-    bottom: 5px;
-    left: 5px;
+    width: 11px;
+    height: 11px;
 }
-
-
 /* =====================================================
    SECTION
 ===================================================== */
