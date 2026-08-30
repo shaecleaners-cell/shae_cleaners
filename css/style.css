@@ -347,49 +347,81 @@ a {
     width: 11px;
     height: 11px;
 }
-/* =====================================================
-   SECTION
-===================================================== */
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
 
 .section {
-    padding: 8px 14px 5px;
+
+  padding: 18px 16px 0;
+
 }
+
 
 .section-title {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    margin-bottom: 13px;
-}
 
-.section-title span,
-.section-heading span {
-    color: var(--primary);
-    font-size: 9px;
-    font-weight: 600;
-}
+  display: flex;
 
-.section-title h3,
-.section-heading h3 {
-    margin-top: 1px;
-    font-size: 17px;
-    font-weight: 700;
-}
+  align-items: center;
 
-.see-all {
-    color: var(--primary);
-    font-size: 9px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
+  justify-content: space-between;
 
-.see-all i {
-    font-size: 8px;
+  gap: 10px;
+
+  margin-bottom: 13px;
+
 }
 
 
+.section-title h2 {
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.3px;
+
+}
+
+
+.section-title p {
+
+  color: var(--text-soft);
+
+  font-size: 10px;
+
+  margin-top: 3px;
+
+}
+
+
+.section-title button {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  background: transparent;
+
+  color: var(--primary);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+}
+
+
+.section-title button i {
+
+  font-size: 8px;
+
+}
 /* =====================================================
    SERVICE GRID
 ===================================================== */
