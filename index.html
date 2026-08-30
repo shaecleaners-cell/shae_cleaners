@@ -254,6 +254,107 @@
 
     </div>
 </section>
+<!-- =====================================================
+     LAYANAN POPULER
+===================================================== -->
+<section class="section">
+  <div class="section-title">
+    <div>
+      <h2>Layanan Populer</h2>
+      <p>Paling sering dipesan pelanggan</p>
+    </div>
+    <button onclick="goToServices()">
+      Semua
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+  <div class="service-list">
+    <!-- SOFA -->
+    <article class="service-card"
+             onclick="openService('sofa')">
+      <div class="service-image">
+        <img
+          src="assets/banner/banner1.png"
+          alt="Cuci Sofa"
+          loading="lazy"
+        >
+        <span class="service-badge">
+          POPULER
+        </span>
+      </div>
+      <div class="service-info">
+        <h3>Cuci Sofa</h3>
+        <p>
+          Sofa standard, lepasan dan sofa besar
+        </p>
+
+        <div class="service-bottom">
+
+          <strong>
+            Mulai Rp60.000
+          </strong>
+
+          <button
+            onclick="event.stopPropagation(); openService('sofa')">
+
+            <i class="fa-solid fa-plus"></i>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- SPRINGBED -->
+
+    <article class="service-card"
+             onclick="openService('kasur')">
+
+      <div class="service-image">
+
+        <img
+          src="assets/banner/banner2.png"
+          alt="Cuci Springbed"
+          loading="lazy"
+        >
+
+        <span class="service-badge">
+          FAVORIT
+        </span>
+
+      </div>
+
+      <div class="service-info">
+
+        <h3>Cuci Springbed</h3>
+
+        <p>
+          Membersihkan debu, noda dan tungau
+        </p>
+
+        <div class="service-bottom">
+
+          <strong>
+            Mulai Rp150.000
+          </strong>
+
+          <button
+            onclick="event.stopPropagation(); openService('kasur')">
+
+            <i class="fa-solid fa-plus"></i>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+</div></section>
     <!-- =========================
          PROMO CARD
     ========================== -->
