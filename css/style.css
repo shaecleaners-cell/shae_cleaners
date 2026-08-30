@@ -214,6 +214,37 @@ a {
   color: #98a2b3;
 
 }
+/* =========================================================
+   PROMO SECTION
+========================================================= */
+
+.promo-section {
+
+  padding: 16px 16px 4px;
+
+}
+
+
+.promo-slider {
+
+  display: flex;
+
+  gap: 12px;
+
+  overflow-x: auto;
+
+  scroll-snap-type: x mandatory;
+
+  scrollbar-width: none;
+
+}
+
+
+.promo-slider::-webkit-scrollbar {
+
+  display: none;
+
+}
 /* =====================================================
    PROMO BAR
 ===================================================== */
