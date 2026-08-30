@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0,
+                   maximum-scale=1.0">
+
+    <meta name="theme-color" content="#1677ff">
+
+    <title>Invoice - Shae Cleaners</title>
+
+    <link rel="stylesheet" href="css/invoice.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="invoice-app">
+
+    <!-- HEADER -->
+    <header class="invoice-header">
+
+        <button class="back-btn"
+                onclick="history.back()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="header-title">
+            <h1>Invoice</h1>
+            <span>Shae Cleaners</span>
+        </div>
+
+        <button class="print-top"
+                onclick="printInvoice()">
+            <i class="fa-solid fa-print"></i>
+        </button>
+
+    </header>
+
+
+    <main class="invoice-content">
+
+        <!-- INVOICE CARD -->
+        <section class="invoice-card" id="invoiceCard">
+
+            <!-- BRAND -->
+            <div class="invoice-brand">
+
+                <div class="brand-logo">
+                    <span>S</span>
+                </div>
+
+                <div>
+                    <h2>Shae <b>Cleaners</b></h2>
+                    <p>Professional Cleaning Service</p>
+                </div>
+
+            </div>
+
+
+            <!-- STATUS -->
+            <div class="invoice-status">
+                <div>
+                    <span>INVOICE</span>
+                    <strong id="invoiceNumber">
+                        INV-00000000-000
+                    </strong>
+                </div>
+
+                <div class="status-badge">
+                    <i class="fa-solid fa-clock"></i>
+                    Menunggu Konfirmasi
+                </div>
+            </div>
+
+
+            <!-- CUSTOMER -->
+            <div class="invoice-section">
+
+                <div class="section-label">
+                    <i class="fa-solid fa-user"></i>
+                    Data Pelanggan
+                </div>
+
+                <div class="customer-box">
+
+                    <div class="info-row">
+                        <span>Nama</span>
+                        <strong id="customerName">-</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>WhatsApp</span>
+                        <strong id="customerPhone">-</strong>
+                    </div>
+
+                    <div class="info-row address-row">
+                        <span>Alamat</span>
+                        <strong id="customerAddress">-</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE -->
+            <div class="invoice-section">
+
+                <div class="section-label">
+                    <i class="fa-solid fa-broom"></i>
+                    Detail Layanan
+                </div>
+
+                <div class="service-box">
+
+                    <div class="service-main">
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-spray-can-sparkles"></i>
+                        </div>
+
+                        <div>
+                            <span id="serviceName">
+                                Cuci Sofa
+                            </span>
+
+                            <strong id="serviceType">
+                                -
+                            </strong>
+                        </div>
+
+                    </div>
+
+                    <div class="service-price"
+                         id="unitPrice">
+                        Rp0
+                    </div>
+
+                </div>
+
+
+                <div class="detail-row">
+                    <span>Harga Satuan</span>
+                    <strong id="detailPrice">Rp0</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Jumlah</span>
+                    <strong id="detailQty">1</strong>
+                </div>
+
+                <div class="detail-row promo-detail"
+                     id="promoDetail"
+                     style="display:none;">
+
+                    <span>
+                        <i class="fa-solid fa-gift"></i>
+                        Promo
+                    </span>
+
+                    <strong>
+                        1 Item FREE
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- SCHEDULE -->
+            <div class="invoice-section">
+
+                <div class="section-label">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    Jadwal Cleaning
+                </div>
+
+                <div class="schedule-box">
+
+                    <div>
+                        <i class="fa-solid fa-calendar"></i>
+
+                        <span>
+                            <small>Tanggal</small>
+                            <strong id="scheduleDate">-</strong>
+                        </span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+
+                        <span>
+                            <small>Jam</small>
+                            <strong id="scheduleTime">-</strong>
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTE -->
+            <div class="note-box"
+                 id="noteBox"
+                 style="display:none;">
+
+                <i class="fa-solid fa-note-sticky"></i>
+
+                <div>
+                    <span>Catatan</span>
+                    <p id="customerNote"></p>
+                </div>
+
+            </div>
+
+
+            <!-- TOTAL -->
+            <div class="total-box">
+
+                <div>
+                    <span>Total Pembayaran</span>
+                    <small>Harga sudah termasuk layanan cleaning</small>
+                </div>
+
+                <strong id="grandTotal">
+                    Rp0
+                </strong>
+
+            </div>
+
+
+            <!-- FOOTER -->
+            <div class="invoice-footer">
+
+                <p>
+                    Terima kasih telah menggunakan
+                    <strong>Shae Cleaners</strong>.
+                </p>
+
+                <span>
+                    Invoice ini dibuat secara otomatis.
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACTION -->
+        <div class="action-buttons">
+
+            <button class="btn-print"
+                    onclick="printInvoice()">
+
+                <i class="fa-solid fa-print"></i>
+
+                Cetak Invoice
+
+            </button>
+
+
+            <button class="btn-wa"
+                    onclick="sendWhatsApp()">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Kirim WhatsApp
+
+            </button>
+
+        </div>
+
+
+        <button class="btn-order"
+                onclick="newOrder()">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Buat Pesanan Baru
+
+        </button>
+
+
+        <p class="secure-text">
+            <i class="fa-solid fa-shield-halved"></i>
+            Invoice tersimpan di perangkat Anda.
+        </p>
+
+    </main>
+
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+
+        <a href="order.html">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Pesanan</span>
+        </a>
+
+        <a href="promo.html">
+            <i class="fa-solid fa-gift"></i>
+            <span>Promo</span>
+        </a>
+
+        <a href="akun.html">
+            <i class="fa-solid fa-user"></i>
+            <span>Akun</span>
+        </a>
+
+    </nav>
+
+</div>
+
+<script src="js/invoice.js"></script>
+
+</body>
+</html>
