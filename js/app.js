@@ -269,6 +269,98 @@ if (searchInput) {
   );
 
 }
+/* =========================================================
+   PROMO SLIDER
+========================================================= */
+
+const promoSlider =
+  document.getElementById(
+    "promoSlider"
+  );
+
+
+const promoDots =
+  document.querySelectorAll(
+    ".slider-dots .dot"
+  );
+
+
+if (promoSlider) {
+
+  let currentSlide = 0;
+
+
+  promoSlider.addEventListener(
+    "scroll",
+    function () {
+
+      const width =
+        promoSlider.offsetWidth;
+
+
+      if (!width) return;
+
+
+      currentSlide =
+        Math.round(
+          promoSlider.scrollLeft / width
+        );
+
+
+      promoDots.forEach(
+        (dot, index) => {
+
+          dot.classList.toggle(
+            "active",
+            index === currentSlide
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+  setInterval(() => {
+
+    if (!promoSlider) return;
+
+
+    const width =
+      promoSlider.offsetWidth;
+
+
+    if (!width) return;
+
+
+    currentSlide++;
+
+
+    if (
+      currentSlide >=
+      promoSlider.children.length
+    ) {
+
+      currentSlide = 0;
+
+    }
+
+
+    promoSlider.scrollTo({
+
+      left:
+        currentSlide * width,
+
+      behavior:
+        "smooth"
+
+    });
+
+  }, 5000);
+
+}
+
 
 /* =====================================================
    CLOSE MENU
