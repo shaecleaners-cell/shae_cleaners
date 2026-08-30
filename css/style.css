@@ -156,6 +156,7 @@ a {
     );
     color: white;
     display: flex;
+    position: sticky;
     align-items: center;
     gap: 9px;
     overflow: hidden;
