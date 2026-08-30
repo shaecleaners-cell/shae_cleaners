@@ -140,7 +140,80 @@ a {
     transform: scale(0.92);
 }
 
+/* =========================================================
+   SEARCH
+========================================================= */
 
+.search-box {
+
+  height: 44px;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 14px;
+
+  border-radius: 12px;
+
+  background: #f3f5f6;
+
+  border: 1px solid transparent;
+
+  transition: 0.2s ease;
+
+}
+
+
+.search-box:focus-within {
+
+  background: #fff;
+
+  border-color: #cdebd7;
+
+  box-shadow:
+    0 0 0 3px rgba(22, 163, 74, 0.08);
+
+}
+
+
+.search-box i {
+
+  color: #98a2b3;
+
+  font-size: 15px;
+
+}
+
+
+.search-box input {
+
+  flex: 1;
+
+  width: 100%;
+
+  border: 0;
+
+  outline: 0;
+
+  background: transparent;
+
+  color: var(--text);
+
+  font-size: 13px;
+
+}
+
+
+.search-box input::placeholder {
+
+  color: #98a2b3;
+
+}
 /* =====================================================
    PROMO BAR
 ===================================================== */
