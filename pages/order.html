@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width,
+                   initial-scale=1.0,
+                   maximum-scale=1.0">
+
+    <meta name="theme-color" content="#1677ff">
+
+    <title>Pesan Layanan - Shae Cleaners</title>
+
+    <link rel="stylesheet" href="css/order.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="order-app">
+
+    <!-- HEADER -->
+    <header class="order-header">
+
+        <button class="back-btn"
+                onclick="history.back()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <div class="header-title">
+            <h1>Pesan Layanan</h1>
+            <span>Shae Cleaners</span>
+        </div>
+
+        <div class="header-icon">
+            <i class="fa-solid fa-broom"></i>
+        </div>
+
+    </header>
+
+
+    <!-- CONTENT -->
+    <main class="order-content">
+
+        <!-- PROMO -->
+        <div class="order-promo">
+
+            <div class="promo-icon">
+                🎁
+            </div>
+
+            <div>
+                <strong>Promo Cleaning</strong>
+                <p>
+                    Cleaning 2 item FREE 1 item*
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- DATA PELANGGAN -->
+        <section class="form-card">
+
+            <div class="card-title">
+                <div class="title-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <span>Data Pelanggan</span>
+                    <h2>Informasi Anda</h2>
+                </div>
+            </div>
+
+
+            <!-- Nama -->
+            <div class="form-group">
+
+                <label for="nama">
+                    Nama Lengkap
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="nama"
+                        placeholder="Masukkan nama Anda"
+                        autocomplete="name">
+
+                </div>
+
+            </div>
+
+
+            <!-- WhatsApp -->
+            <div class="form-group">
+
+                <label for="telepon">
+                    Nomor WhatsApp
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    <input
+                        type="tel"
+                        id="telepon"
+                        placeholder="08xxxxxxxxxx"
+                        autocomplete="tel">
+
+                </div>
+
+            </div>
+
+
+            <!-- Alamat -->
+            <div class="form-group">
+
+                <label for="alamat">
+                    Alamat
+                </label>
+
+                <div class="input-box textarea-box">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <textarea
+                        id="alamat"
+                        rows="3"
+                        placeholder="Masukkan alamat lengkap"></textarea>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LAYANAN -->
+        <section class="form-card">
+
+            <div class="card-title">
+
+                <div class="title-icon">
+                    <i class="fa-solid fa-spray-can-sparkles"></i>
+                </div>
+
+                <div>
+                    <span>Layanan</span>
+                    <h2>Pilih Layanan</h2>
+                </div>
+
+            </div>
+
+
+            <!-- Layanan -->
+            <div class="form-group">
+
+                <label for="layanan">
+                    Jenis Layanan
+                </label>
+
+                <div class="select-box">
+
+                    <i class="fa-solid fa-broom"></i>
+
+                    <select id="layanan">
+
+                        <option value="">
+                            Pilih layanan
+                        </option>
+
+                        <option value="sofa">
+                            🛋️ Cuci Sofa
+                        </option>
+
+                        <option value="kasur">
+                            🛏️ Cuci Kasur
+                        </option>
+
+                        <option value="jokmobil">
+                            🚗 Jok Mobil
+                        </option>
+
+                        <option value="karpet">
+                            🧹 Cuci Karpet
+                        </option>
+
+                        <option value="kursi">
+                            🪑 Cuci Kursi
+                        </option>
+
+                        <option value="ac">
+                            ❄️ Cuci AC
+                        </option>
+
+                        <option value="gorden">
+                            🪟 Cuci Gorden
+                        </option>
+
+                        <option value="homecleaning">
+                            🏠 Home Cleaning
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Jenis / Ukuran -->
+            <div class="form-group">
+
+                <label for="jenis">
+                    Jenis / Ukuran
+                </label>
+
+                <div class="select-box">
+
+                    <i class="fa-solid fa-list"></i>
+
+                    <select id="jenis" disabled>
+
+                        <option value="">
+                            Pilih layanan terlebih dahulu
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Harga -->
+            <div class="price-preview">
+
+                <span>Harga Satuan</span>
+
+                <strong id="harga">
+                    Rp0
+                </strong>
+
+            </div>
+
+
+            <!-- Qty -->
+            <div class="quantity-row">
+
+                <div>
+                    <label>Jumlah</label>
+                    <small>Item / unit</small>
+                </div>
+
+                <div class="quantity">
+
+                    <button type="button"
+                            id="minusBtn">
+                        −
+                    </button>
+
+                    <span id="qty">
+                        1
+                    </span>
+
+                    <button type="button"
+                            id="plusBtn">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- JADWAL -->
+        <section class="form-card">
+
+            <div class="card-title">
+
+                <div class="title-icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+
+                <div>
+                    <span>Jadwal</span>
+                    <h2>Pilih Waktu</h2>
+                </div>
+
+            </div>
+
+
+            <div class="date-time-grid">
+
+                <div class="form-group">
+
+                    <label for="tanggal">
+                        Tanggal
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-calendar"></i>
+
+                        <input
+                            type="date"
+                            id="tanggal">
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="jam">
+                        Jam
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <input
+                            type="time"
+                            id="jam">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RINGKASAN -->
+        <section class="summary-card">
+
+            <div class="summary-header">
+
+                <div>
+                    <span>Ringkasan</span>
+                    <h2>Total Pesanan</h2>
+                </div>
+
+                <i class="fa-solid fa-receipt"></i>
+
+            </div>
+
+
+            <div class="summary-line">
+                <span>Layanan</span>
+                <strong id="summaryLayanan">
+                    -
+                </strong>
+            </div>
+
+
+            <div class="summary-line">
+                <span>Jenis</span>
+                <strong id="summaryJenis">
+                    -
+                </strong>
+            </div>
+
+
+            <div class="summary-line">
+                <span>Harga</span>
+                <strong id="summaryHarga">
+                    Rp0
+                </strong>
+            </div>
+
+
+            <div class="summary-line">
+                <span>Jumlah</span>
+                <strong id="summaryQty">
+                    1
+                </strong>
+            </div>
+
+
+            <div class="summary-line discount-row"
+                 id="discountRow"
+                 style="display:none;">
+
+                <span>
+                    🎁 Promo
+                </span>
+
+                <strong id="discountText">
+                    FREE 1 ITEM
+                </strong>
+
+            </div>
+
+
+            <div class="summary-total">
+
+                <span>Total</span>
+
+                <strong id="total">
+                    Rp0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATATAN -->
+        <section class="form-card">
+
+            <div class="form-group">
+
+                <label for="catatan">
+                    Catatan Tambahan
+                    <small>(opsional)</small>
+                </label>
+
+                <div class="input-box textarea-box">
+
+                    <i class="fa-solid fa-note-sticky"></i>
+
+                    <textarea
+                        id="catatan"
+                        rows="3"
+                        placeholder="Contoh: sofa warna putih, ada noda kopi, dll."></textarea>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INVOICE -->
+        <div class="invoice-number">
+
+            <span>
+                Nomor Pesanan
+            </span>
+
+            <strong id="invoice">
+                INV-00000000-001
+            </strong>
+
+        </div>
+
+
+        <!-- BUTTON -->
+        <button class="order-button"
+                id="btnWA">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Kirim Pesanan ke WhatsApp
+
+        </button>
+
+
+        <p class="secure-text">
+            <i class="fa-solid fa-shield-halved"></i>
+            Data pesanan Anda tersimpan secara aman di perangkat.
+        </p>
+
+    </main>
+
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+
+        <a href="order.html" class="active">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Pesanan</span>
+        </a>
+
+        <a href="promo.html">
+            <i class="fa-solid fa-gift"></i>
+            <span>Promo</span>
+        </a>
+
+        <a href="akun.html">
+            <i class="fa-solid fa-user"></i>
+            <span>Akun</span>
+        </a>
+
+    </nav>
+
+</div>
+
+
+<script src="js/order.js"></script>
+
+</body>
+</html>
