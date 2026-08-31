@@ -1,7 +1,6 @@
 /* ==========================================
    SHAE CLEANERS
    SOFA SERVICE
-   COCOK DENGAN ORDER.JS
    TANPA FIREBASE
 ========================================== */
 
@@ -16,8 +15,7 @@ const sofaData = [
     item: "Sofa Standard 1 Seater",
     harga: 60000,
     total: 60000,
-    qty: 1,
-    icon: "fa-couch"
+    qty: 1
   },
 
   {
@@ -26,8 +24,7 @@ const sofaData = [
     item: "Sofa Lepasan 1 Seater",
     harga: 75000,
     total: 75000,
-    qty: 1,
-    icon: "fa-couch"
+    qty: 1
   },
 
   {
@@ -36,8 +33,7 @@ const sofaData = [
     item: "Sofa Besar 1 Seater",
     harga: 75000,
     total: 75000,
-    qty: 1,
-    icon: "fa-couch"
+    qty: 1
   },
 
   {
@@ -46,8 +42,7 @@ const sofaData = [
     item: "Sofa Stool",
     harga: 50000,
     total: 50000,
-    qty: 1,
-    icon: "fa-chair"
+    qty: 1
   },
 
   {
@@ -56,8 +51,7 @@ const sofaData = [
     item: "Sofa L Standard",
     harga: 250000,
     total: 250000,
-    qty: 1,
-    icon: "fa-couch"
+    qty: 1
   },
 
   {
@@ -66,8 +60,7 @@ const sofaData = [
     item: "Sofa L BIG",
     harga: 300000,
     total: 300000,
-    qty: 1,
-    icon: "fa-couch"
+    qty: 1
   },
 
   {
@@ -76,8 +69,7 @@ const sofaData = [
     item: "Sofa U",
     harga: 350000,
     total: 350000,
-    qty: 1,
-    icon: "fa-couch"
+    qty: 1
   }
 
 ];
@@ -99,14 +91,12 @@ function formatRupiah(value) {
 }
 
 
-/* ================= LOAD ================= */
+/* ================= LOAD SOFA ================= */
 
 function loadSofa() {
 
   const list =
-    document.getElementById(
-      "sofaList"
-    );
+    document.getElementById("sofaList");
 
   if (!list) return;
 
@@ -114,74 +104,64 @@ function loadSofa() {
   list.innerHTML = "";
 
 
-  sofaData.forEach(
-    sofa => {
+  sofaData.forEach(function(sofa) {
 
-      const card =
-        document.createElement("button");
-
-
-      card.type =
-        "button";
+    const card =
+      document.createElement("button");
 
 
-      card.className =
-        "sofa-card";
+    card.type = "button";
+
+    card.className = "sofa-card";
+
+    card.dataset.id = sofa.id;
 
 
-      card.dataset.id =
-        sofa.id;
+    card.innerHTML = `
+
+      <div class="sofa-card-icon">
+
+        <i class="fa-solid fa-couch"></i>
+
+      </div>
 
 
-      card.innerHTML = `
+      <div class="sofa-card-content">
 
-        <div class="sofa-card-icon">
+        <strong>
+          ${sofa.item}
+        </strong>
 
-          <i class="fa-solid ${sofa.icon}"></i>
+        <span>
+          ${getDescription(sofa)}
+        </span>
 
-        </div>
+        <b>
+          ${formatRupiah(sofa.harga)}
+        </b>
 
-
-        <div class="sofa-card-content">
-
-          <strong>
-            ${sofa.item}
-          </strong>
-
-          <span>
-            ${getDescription(sofa)}
-          </span>
-
-          <b>
-            ${formatRupiah(sofa.harga)}
-          </b>
-
-        </div>
+      </div>
 
 
-        <div class="sofa-card-arrow">
+      <div class="sofa-card-arrow">
 
-          <i class="fa-solid fa-chevron-right"></i>
+        <i class="fa-solid fa-chevron-right"></i>
 
-        </div>
+      </div>
 
-      `;
-
-
-      card.addEventListener(
-        "click",
-        () => {
-
-          selectSofa(sofa);
-
-        }
-      );
+    `;
 
 
-      list.appendChild(card);
+    card.onclick = function() {
 
-    }
-  );
+      selectSofa(sofa);
+
+    };
+
+
+    list.appendChild(card);
+
+  });
 
 }
 
@@ -190,150 +170,109 @@ function loadSofa() {
 
 function getDescription(sofa) {
 
-  if (
-    sofa.id === "sofa-standard"
-  ) {
+  switch (sofa.id) {
 
-    return "Harga per 1 seat";
+    case "sofa-standard":
+      return "Harga per 1 seat";
 
-  }
+    case "sofa-lepasan":
+      return "Cover sofa dapat dilepas";
 
+    case "sofa-besar":
+      return "Untuk sofa ukuran besar";
 
-  if (
-    sofa.id === "sofa-lepasan"
-  ) {
+    case "sofa-stool":
+      return "Harga per 1 seat";
 
-    return "Cover sofa dapat dilepas";
+    case "sofa-l-standard":
+      return "Harga per SET";
 
-  }
+    case "sofa-l-big":
+      return "Harga per SET ukuran besar";
 
+    case "sofa-u":
+      return "Harga per SET";
 
-  if (
-    sofa.id === "sofa-besar"
-  ) {
-
-    return "Untuk sofa ukuran besar";
-
-  }
-
-
-  if (
-    sofa.id === "sofa-stool"
-  ) {
-
-    return "Harga per 1 seat";
+    default:
+      return "Cleaning sofa profesional";
 
   }
-
-
-  if (
-    sofa.id === "sofa-l-standard"
-  ) {
-
-    return "Harga per SET";
-
-  }
-
-
-  if (
-    sofa.id === "sofa-l-big"
-  ) {
-
-    return "Harga per SET ukuran besar";
-
-  }
-
-
-  if (
-    sofa.id === "sofa-u"
-  ) {
-
-    return "Harga per SET";
-
-  }
-
-
-  return "Cleaning sofa profesional";
 
 }
 
 
-/* ================= SELECT ================= */
+/* ================= PILIH SOFA ================= */
 
 function selectSofa(sofa) {
 
-  selectedSofa =
-    sofa;
+  selectedSofa = sofa;
 
 
-  /*
-    Hilangkan selected
-    dari kartu lain
-  */
+  /* Tandai pilihan */
 
-  document
-    .querySelectorAll(".sofa-card")
-    .forEach(card => {
-
-      card.classList.remove(
-        "selected"
-      );
-
-    });
-
-
-  /*
-    Tandai kartu yang dipilih
-  */
-
-  const card =
-    document.querySelector(
-      `[data-id="${sofa.id}"]`
+  const cards =
+    document.querySelectorAll(
+      ".sofa-card"
     );
 
 
-  if (card) {
+  cards.forEach(function(card) {
 
-    card.classList.add(
+    card.classList.remove(
+      "selected"
+    );
+
+  });
+
+
+  const selectedCard =
+    document.querySelector(
+      '[data-id="' +
+      sofa.id +
+      '"]'
+    );
+
+
+  if (selectedCard) {
+
+    selectedCard.classList.add(
       "selected"
     );
 
   }
 
 
-  /*
-    Update bottom bar
-  */
+  /* Update pilihan */
 
-  const selectedName =
+  const name =
     document.getElementById(
       "selectedName"
     );
 
 
-  const selectedPrice =
+  const price =
     document.getElementById(
       "selectedPrice"
     );
 
 
-  const orderButton =
+  const button =
     document.getElementById(
       "orderButton"
     );
 
 
-  if (selectedName) {
+  if (name) {
 
-    selectedName.textContent =
+    name.textContent =
       sofa.item;
 
   }
 
 
-  if (selectedPrice) {
+  if (price) {
 
-    selectedPrice.textContent =
+    price.textContent =
       formatRupiah(
         sofa.harga
       );
@@ -341,31 +280,122 @@ function selectSofa(sofa) {
   }
 
 
-  if (orderButton) {
+  if (button) {
 
-    orderButton.disabled =
-      false;
+    button.disabled = false;
 
   }
 
 
   /*
-    SIMPAN DENGAN KEY
-    YANG DICARI ORDER.JS
+    SIMPAN LANGSUNG
+    begitu layanan dipilih
   */
 
-  localStorage.setItem(
-
-    "shaeSelectedService",
-
-    JSON.stringify(sofa)
-
-  );
+  saveSelectedService(sofa);
 
 }
 
 
+/* ================= SIMPAN ================= */
+
+function saveSelectedService(sofa) {
+
+  const data = {
+
+    id: sofa.id,
+
+    layanan: "Cuci Sofa",
+
+    item: sofa.item,
+
+    harga: Number(sofa.harga),
+
+    qty: 1,
+
+    total: Number(sofa.harga)
+
+  };
+
+
+  try {
+
+    /*
+      Key utama untuk order.js
+    */
+
+    localStorage.setItem(
+      "shaeSelectedService",
+      JSON.stringify(data)
+    );
+
+
+    /*
+      Key cadangan
+    */
+
+    localStorage.setItem(
+      "shaeOrderData",
+      JSON.stringify(data)
+    );
+
+
+    console.log(
+      "SERVICE TERSIMPAN:",
+      data
+    );
+
+
+  } catch (error) {
+
+    console.error(
+      "Gagal menyimpan layanan:",
+      error
+    );
+
+
+    alert(
+      "Data layanan tidak dapat disimpan. Silakan coba lagi."
+    );
+
+  }
+
+}
+
+
+/* ================= PESAN ================= */
+
 function orderSofa() {
+
+  if (!selectedSofa) {
+
+    /*
+      Coba ambil data yang sudah tersimpan
+    */
+
+    try {
+
+      const saved =
+        localStorage.getItem(
+          "shaeSelectedService"
+        );
+
+
+      if (saved) {
+
+        selectedSofa =
+          JSON.parse(saved);
+
+      }
+
+    } catch (error) {
+
+      console.error(error);
+
+    }
+
+  }
+
 
   if (!selectedSofa) {
 
@@ -378,70 +408,22 @@ function orderSofa() {
   }
 
 
-  /* ========================================
-     DATA UNTUK ORDER.HTML
-  ======================================== */
+  /*
+    Simpan sekali lagi
+    sebelum pindah halaman
+  */
 
-  const serviceData = {
-
-    id:
-      selectedSofa.id,
-
-    layanan:
-      "Cuci Sofa",
-
-    item:
-      selectedSofa.item,
-
-    harga:
-      Number(
-        selectedSofa.harga
-      ),
-
-    qty:
-      1,
-
-    total:
-      Number(
-        selectedSofa.harga
-      )
-
-  };
-
-
-  /* ========================================
-     SIMPAN LAYANAN
-  ======================================== */
-
-  localStorage.setItem(
-
-    "shaeSelectedService",
-
-    JSON.stringify(
-      serviceData
-    )
-
+  saveSelectedService(
+    selectedSofa
   );
 
 
-  /* ========================================
-     DEBUG
-     Bisa dicek di browser console
-  ======================================== */
+  /*
+    Pindah ke ORDER
+  */
 
-  console.log(
-    "Layanan dipilih:",
-    serviceData
-  );
-
-
-  /* ========================================
-     MASUK KE ORDER
-  ======================================== */
-
-  window.location.assign(
-    "order.html"
-  );
+  window.location.href =
+    "order.html";
 
 }
 
@@ -456,7 +438,7 @@ function shareSofa() {
       "Cuci Sofa - Shae Cleaners",
 
     text:
-      "Pesan layanan Cuci Sofa Shae Cleaners.",
+      "Pesan Cuci Sofa di Shae Cleaners",
 
     url:
       window.location.href
@@ -470,9 +452,7 @@ function shareSofa() {
 
     navigator.share(
       shareData
-    ).catch(
-      () => {}
-    );
+    ).catch(function() {});
 
     return;
 
@@ -487,10 +467,10 @@ function shareSofa() {
       .writeText(
         window.location.href
       )
-      .then(() => {
+      .then(function() {
 
         alert(
-          "Link layanan berhasil disalin."
+          "Link berhasil disalin."
         );
 
       });
@@ -507,43 +487,74 @@ function shareSofa() {
 }
 
 
+/* ================= BACK ================= */
+
+function goBack() {
+
+  window.location.href =
+    "index.html";
+
+}
+
+
 /* ================= RESTORE ================= */
 
 function restoreSelectedSofa() {
 
   try {
 
-    const saved =
-      JSON.parse(
+    let saved =
+      localStorage.getItem(
+        "shaeSelectedService"
+      );
+
+
+    /*
+      Kalau key utama kosong,
+      gunakan key cadangan.
+    */
+
+    if (!saved) {
+
+      saved =
         localStorage.getItem(
-          "shaeSelectedService"
-        )
-      );
-
-
-    if (!saved) return;
-
-
-    const found =
-      sofaData.find(
-        sofa =>
-          sofa.id === saved.id
-      );
-
-
-    if (found) {
-
-      selectSofa(
-        found
-      );
+          "shaeOrderData"
+        );
 
     }
 
-  } catch {
 
-    /*
-      Abaikan data rusak
-    */
+    if (!saved) {
+
+      return;
+
+    }
+
+
+    const data =
+      JSON.parse(saved);
+
+
+    const sofa =
+      sofaData.find(function(item) {
+
+        return item.id === data.id;
+
+      });
+
+
+    if (sofa) {
+
+      selectSofa(sofa);
+
+    }
+
+  } catch (error) {
+
+    console.error(
+      "Gagal restore sofa:",
+      error
+    );
 
   }
 
@@ -554,7 +565,7 @@ function restoreSelectedSofa() {
 
 document.addEventListener(
   "DOMContentLoaded",
-  () => {
+  function() {
 
     loadSofa();
 
