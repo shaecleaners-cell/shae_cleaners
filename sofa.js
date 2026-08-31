@@ -365,35 +365,7 @@ function selectSofa(sofa) {
 }
 
 
-/* ================= ORDER ================= */
-
 function orderSofa() {
-
-  /*
-    Kalau belum ada pilihan
-    coba ambil dari localStorage
-  */
-
-  if (!selectedSofa) {
-
-    try {
-
-      selectedSofa =
-        JSON.parse(
-          localStorage.getItem(
-            "shaeSelectedService"
-          )
-        );
-
-    } catch {
-
-      selectedSofa =
-        null;
-
-    }
-
-  }
-
 
   if (!selectedSofa) {
 
@@ -406,10 +378,9 @@ function orderSofa() {
   }
 
 
-  /*
-    Pastikan format sesuai
-    dengan order.js
-  */
+  /* ========================================
+     DATA UNTUK ORDER.HTML
+  ======================================== */
 
   const serviceData = {
 
@@ -417,7 +388,7 @@ function orderSofa() {
       selectedSofa.id,
 
     layanan:
-      selectedSofa.layanan,
+      "Cuci Sofa",
 
     item:
       selectedSofa.item,
@@ -428,21 +399,19 @@ function orderSofa() {
       ),
 
     qty:
-      Number(
-        selectedSofa.qty || 1
-      ),
+      1,
 
     total:
       Number(
-        selectedSofa.total
+        selectedSofa.harga
       )
 
   };
 
 
-  /*
-    Simpan ulang
-  */
+  /* ========================================
+     SIMPAN LAYANAN
+  ======================================== */
 
   localStorage.setItem(
 
@@ -455,35 +424,24 @@ function orderSofa() {
   );
 
 
-  /*
-    Masuk ORDER
-  */
+  /* ========================================
+     DEBUG
+     Bisa dicek di browser console
+  ======================================== */
 
-  window.location.href =
-    "order.html";
+  console.log(
+    "Layanan dipilih:",
+    serviceData
+  );
 
-}
 
+  /* ========================================
+     MASUK KE ORDER
+  ======================================== */
 
-/* ================= BACK ================= */
-
-function goBack() {
-
-  if (
-    document.referrer &&
-    document.referrer.includes(
-      window.location.hostname
-    )
-  ) {
-
-    history.back();
-
-  } else {
-
-    window.location.href =
-      "index.html";
-
-  }
+  window.location.assign(
+    "order.html"
+  );
 
 }
 
